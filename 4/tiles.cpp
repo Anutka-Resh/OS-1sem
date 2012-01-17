@@ -4,12 +4,12 @@
 #include <cstdlib>
 using namespace std;
 
-const int r = 11;
+const int r = 8;
 const int size = 1 << r;
 
 const int TileSize = r / 2;
-const int MOD = TileSize - 1;
 const int ElInTile = 1 << TileSize;
+const int MOD = ElInTile - 1;
 const int NumOfTiles = size / ElInTile;
 
 int TilesA[NumOfTiles][NumOfTiles][ElInTile][ElInTile];

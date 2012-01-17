@@ -51,13 +51,20 @@ int main(int argc, char *argv[])
             printf("ERROR! no files names entered\n");
             return 0;
     }
-    for(int i=1; i<argc;++i)
-    {
 
+    for(int i=1; i<(argc-1);++i)
+    {
             create_vector(argv[i]);
     }
-    sort (myvector.begin(), myvector.end());
-
+    try
+    {       
+            sort (myvector.begin(), myvector.end());
+    }
+    catch (exception e)
+    {
+         printf("ERROR! cannot sort numbers\n");
+    }
+    
     FILE * myfile;
     myfile = fopen(argv[argc-1], "w");
     if(myfile == NULL)
